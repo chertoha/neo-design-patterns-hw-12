@@ -50,10 +50,12 @@ export class BlockFactory {
         return new SummaryBlock(model.summary);
       case "experience":
         // TODO: Поверніть новий ExperienceBlock з відповідними даними
-        return new ExperienceBlock(model.experience[0]);
+        // return new ExperienceBlock(model.experience[0]);
+        return new ExperienceBlock(model.experience);
       case "education":
         // TODO: Поверніть новий EducationBlock з відповідними даними
-        return new EducationBlock(model.education[0]);
+        // return new EducationBlock(model.education[0]);
+        return new EducationBlock(model.education);
       case "skills":
         // TODO: Поверніть новий SkillsBlock з відповідними даними
         return new SkillsBlock(model.skills);

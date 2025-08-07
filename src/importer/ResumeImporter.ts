@@ -53,21 +53,23 @@ export class ResumeImporter extends AbstractImporter<ResumeModel> {
 
     // TODO: Створіть і додайте у DOM кожен блок резюме
 
-    for (const exp of model.experience) {
-      root.appendChild(
-        new BlockFactory()
-          .createBlock("experience", { ...model, experience: [exp] })
-          .render()
-      );
-    }
+    root.appendChild(factory.createBlock("experience", model).render());
+    // for (const exp of model.experience) {
+    //   root.appendChild(
+    //     new BlockFactory()
+    //       .createBlock("experience", { ...model, experience: [exp] })
+    //       .render()
+    //   );
+    // }
 
-    for (const edu of model.education) {
-      root.appendChild(
-        new BlockFactory()
-          .createBlock("education", { ...model, education: [edu] })
-          .render()
-      );
-    }
+    root.appendChild(factory.createBlock("education", model).render());
+    // for (const edu of model.education) {
+    //   root.appendChild(
+    //     new BlockFactory()
+    //       .createBlock("education", { ...model, education: [edu] })
+    //       .render()
+    //   );
+    // }
 
     root.appendChild(factory.createBlock("skills", model).render());
   }
